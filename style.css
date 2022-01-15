@@ -1,0 +1,53 @@
+body {
+    background-image: linear-gradient(180deg, rgb(236, 175, 6), rgb(255, 145, 0));
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.clear {
+    background-color: #720303 !important;
+    color: white !important;
+    margin-left: 2rem !important;
+}
+
+.add {
+    background-color: #fff !important;
+    color: rgb(255, 145, 0) !important;
+}
+
+.header {
+    margin: 0;
+    color: rgb(114, 3, 3);
+}
+
+.to-do-item {
+    background-color: whitesmoke;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+.item-content {
+    display: flex;
+    color: rgb(114, 3, 3);
+    font-size: 1.2rem;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.item-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.6rem;
+}
+
+.delete-button {
+    padding: 1rem;
+    background-color: rgb(114, 3, 3);
+    color: #fff;
+}
+
+.done-button {
+    padding: 1rem;
+    background-color: rgb(255, 145, 0);
+    color: #fff;
+}

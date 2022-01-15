@@ -3,35 +3,49 @@ function addToDo() {
     if (form_value === "") {
         alert("You Cannot Create a Empty ToDo.\nTry Entering a name.");
     } else {
-        var to_do_list = document.getElementById("list");
+        let to_do_list = document.getElementById("list");
+
+        // creating a to do list item
         let list = document.createElement("li");
         list.className = "to-do-item";
         to_do_list.appendChild(list);
+
+        //creating the inner content of list items
         let content = document.createElement("content");
         content.className = "item-content justify-content-between";
         list.appendChild(content);
+
+        // integrating the form value to the list item
         let text = document.createElement("p");
         text.className = "item-text";
-        text.innerHTML = form_value;
+        text.innerText = form_value;
         content.appendChild(text);
+
+        //creating the div which has  the  buttons inside
         let buttons = document.createElement("div");
         buttons.className = "buttons";
         content.append(buttons);
-        let button1 = document.createElement("button");
-        button1.className = "delete-button";
-        button1.innerHTML = "X";
-        buttons.appendChild(button1);
-        let button2 = document.createElement("button");
-        button2.className = "done-button";
-        button2.innerHTML = "Done!";
-        buttons.appendChild(button2);
-        button1.onclick = function() { list.remove(); };
-        button2.addEventListener('click', function() {
+
+        // creating the delete  button
+        let deleteButton = document.createElement("button");
+        deleteButton.className = "delete-button";
+        deleteButton.innerText = "X";
+        buttons.appendChild(deleteButton);
+
+        // creating the mark as done button      
+        let doneButton = document.createElement("button");
+        doneButton.className = "done-button";
+        doneButton.innerText = "Done!";
+        buttons.appendChild(doneButton);
+
+        //adding the onclick methods for the items
+        deleteButton.onclick = function() { list.remove(); };
+        doneButton.addEventListener('click', function() {
             list.style.backgroundColor = "#720303";
             text.style.color = "#fff";
             text.style.textDecoration = "line-through";
-            button1.style.backgroundColor = "#fff";
-            button1.style.color = "#720303";
+            deleteButton.style.backgroundColor = "#fff";
+            deleteButton.style.color = "#720303";
         }, false);
     }
 }
